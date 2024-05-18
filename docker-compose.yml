@@ -1,0 +1,21 @@
+version: '3'
+services:
+  cash-grab:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    env_file:
+      - .env
+    networks:
+      - ecommerce-backend-go_net
+    environment:
+      - EMAIL_PRO=${EMAIL_PRO}
+      - EMAIL_PRO_SMTP=${EMAIL_PRO_SMTP}
+      - EMAIL_PRO_PASSWORD=${EMAIL_PRO_PASSWORD}
+      - EMAIL_PRO_PORT=${EMAIL_PRO_PORT}
+      - BOOTSTRAP_SERVER=${BOOTSTRAP_SERVER}
+      - ORDER_TOPIC=${ORDER_TOPIC}
+
+networks:
+  ecommerce-backend-go_net:
+    external: true
