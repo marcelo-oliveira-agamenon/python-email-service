@@ -1,5 +1,5 @@
 import json, os
-from sendEmailUtil import *
+from sendEmailUtil import sendEmail
 from kafka import KafkaConsumer
 from dotenv import load_dotenv
 
